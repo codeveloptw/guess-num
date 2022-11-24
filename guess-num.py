@@ -1,8 +1,12 @@
 import random
 
-r = random.randint(1, 100)
+top = 100
+down = 0
+
+r = random.randint(down, top)
 print(f"random number = {r}")
 count = 0
+
 
 while True:
 	count += 1
@@ -13,7 +17,10 @@ while True:
 		print(f"猜了 {count} 次")
 		break
 	elif num > r:
-		print('比答案大')
+		top = num
+		print(f"比答案大, Number between {down} and {top}")
 	elif num < r:
 		print('比答案小')
+		down = num
+		print(f"比答案大, Number between {down} and {top}")		
 	print(f"猜了 {count} 次")
